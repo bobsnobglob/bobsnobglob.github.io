@@ -1,8 +1,35 @@
 <!DOCTYPE html>
 <html>
 <body>
+<script>
+var r=255;
+var g=255;
+var b=255;
+
+function sliderChange(){
+  document.body.style.backgroundColor=("rgb("+r+","+g+","+b+")")
+  
+} 
+function sliderChangeR(val){
+  r=val;
+  sliderChange();
+}  
+function sliderChangeR(val){
+  g=val;
+  sliderChange();
+}
+function sliderChangeR(val){
+  b=val;
+  sliderChange();
+}  
+</script>  
 <a href="index.html"> Return</a>  
 <h1>Telly</h1>
+<p>
+<input type="range" id="slider" min="0" max="255" onchange="sliderChangeR(this.value)"/> <br>
+<input type="range" id="slider" min="0" max="255" onchange="sliderChangeG(this.value)"/> <br>  
+<input type="range" id="slider" min="0" max="255" onchange="sliderChangeB(this.value)"/> <br> 
+</p>  
 <iframe width="729" height="410" src="https://www.youtube.com/embed/dggqQcJDqy4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </body>
 </html>
