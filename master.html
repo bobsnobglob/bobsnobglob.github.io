@@ -1,0 +1,50 @@
+<html>
+<head>
+</head>
+<body>
+<canvas id="game"></canvas>
+<script>
+var Key= {
+_pressed: {},
+
+LEFT:37,
+UP:38,
+RIGHT:39,
+DOWN:40,
+
+isDown:function(event){
+delete this._pressed[event.keyCode];
+},
+onkeydown: function(event) {
+this._pressed[event.keyCode]=true;
+},
+onkeyup: function(event) {
+delete this._pressed[event.keyCode]=true;
+};
+
+window.addEventListener('keyup', fuction(event) { Ket.onKeyup(event);}, false);
+window.addEventListener('ketdown', function(event) { Key.onKeydown(event);}, false);
+
+var x=50;
+var y=50;
+
+var canvas=document.getElementById('game');
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+var ctx = canvas.getContext('2d');
+
+var speed=3;
+
+function draw() {
+ctx.clearRect(0,0,canvas.height);
+
+var character= new Path2D();
+character.arc(x,y,25, 0, 2*Math.PI);
+
+ctx.fill(character);
+}
+setInterval(draw, 10);
+</script>
+</body>
+</html>
